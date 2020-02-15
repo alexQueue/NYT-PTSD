@@ -133,6 +133,8 @@ class articleAPI(object):
 import csv
 import time
 import os
+
+from pathlib import Path
 #Load list of 7 API keys to cycle through
 api_counter = 0
 api_file = open("/Users/hieronimusloho/Box Sync/Research Stuff/NYTLocal/NYT_keys.txt", "r")
@@ -142,12 +144,14 @@ api_list = api_file.read().split('\n')
 api = articleAPI(api_list[api_counter])
 
 #Load in a list of search terms written in Lucene query syntax
-terms_file = open("/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/Terms/veterans_terms.txt", "r")
+terms_path = Path.cwd / 'Terms' / 'veterans_terms.txt'
+terms_file = open(terms_path, "r")
 terms = terms_file.read().split('\n')
 print terms
 
 #Load a separate file of list of shortened/clean search terms that are easier to display
-display_file = open("/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/Terms/veterans_disp_terms.txt", "r")
+display_file_path = Path.cwd / 'Terms' / 'veterans_disp_terms.txt'
+display_file = open(display_file_path, "r")
 disp_terms = display_file.read().split('\n')
 
 #Where the CSVs will be written out
