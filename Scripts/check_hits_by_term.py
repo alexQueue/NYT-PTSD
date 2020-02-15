@@ -155,7 +155,7 @@ display_file = open(display_file_path, "r")
 disp_terms = display_file.read().split('\n')
 
 #Where the CSVs will be written out
-write_out_path = '/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/CSVs/hits'
+write_out_path = Path.cwd / 'CSVs' / 'hits'
 
 #Start and end years
 start_year = 1900
