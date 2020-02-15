@@ -155,7 +155,7 @@ write_out_path = '/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/CSVs/hi
 
 #Start and end years
 start_year = 1900
-end_year = 2016
+end_year = 2019
 
 #Parses the JSON response and returns the year, # of hits from the metadata, the term, and what quarter it was in.
 def parse_articles(articles, year, term, quarter):
