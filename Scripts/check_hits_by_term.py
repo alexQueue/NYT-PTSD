@@ -135,8 +135,8 @@ import time
 import os
 #Load list of 7 API keys to cycle through
 api_counter = 0
-api_file = open("/Users/hieronimusloho/Box Sync/Research Stuff/NYTLocal/NYT_keys.txt", "r")
-api_list = api_file.read().split('\n')
+api_keys = os.environ["NYT_API_KEYS"]
+api_list = api_keys.split('\n')
 
 #Initialize first API key
 api = articleAPI(api_list[api_counter])

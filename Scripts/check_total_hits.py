@@ -8,8 +8,8 @@ import csv
 import time
 import os
 #Insert API Key
-api_file = open("/Users/hieronimusloho/Box Sync/Research Stuff/NYTLocal/NYT_keys.txt", "r")
-api_list = api_file.read().split('\n')
+api_keys = os.environ["NYT_API_KEYS"]
+api_list = api_keys.split('\n')
 api = articleAPI(api_list[6])
 mental_health = []
 #Start and end year 
