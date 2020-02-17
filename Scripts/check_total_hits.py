@@ -91,7 +91,7 @@ def main():
         mental_health_year =  get_articles(str(year))
         mental_health += mental_health_year
     #Write out the list as a csv
-    path1 = '/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/CSVs/hits/total_per_quarter(no_oldest_sort)'
+    path1 = abspath('CSVs/hits/total_per_quarter(no_oldest_sort)')
     writer(mental_health, path1)
 
 main()
