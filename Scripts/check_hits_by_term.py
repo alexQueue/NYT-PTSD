@@ -156,7 +156,7 @@ display_file = open(display_file_path, "r")
 disp_terms = display_file.read().split('\n')
 
 #Where the CSVs will be written out
-write_out_path = abspath('CSVs/hits')
+write_out_path = abspath('CSVs/hits/')
 
 #Start and end years
 start_year = 1900
