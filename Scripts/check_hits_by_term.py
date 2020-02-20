@@ -160,7 +160,7 @@ write_out_path = abspath('CSVs/hits/')
 
 #Start and end years
 start_year = 1900
-end_year = 2019
+end_year = 2016
 
 #Parses the JSON response and returns the year, # of hits from the metadata, the term, and what quarter it was in.
 def parse_articles(articles, year, term, quarter):
