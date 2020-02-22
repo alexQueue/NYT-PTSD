@@ -248,7 +248,7 @@ def get_articles(date,query,disp):
 #This function writes out the python dictionary as a csv
 def write_csv(dictionary, path, term, begin, end):   
     keys = dictionary[0].keys()
-    open_file_path = path + term + "_" + str(begin) + 'to' + str(end) + '.csv'
+    open_file_path = path + "/" + term + "_" + str(begin) + 'to' + str(end) + '.csv'
     with open(open_file_path, 'wb') as output_file:
         dict_writer = csv.DictWriter(output_file, keys)
         dict_writer.writeheader()
