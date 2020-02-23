@@ -9,6 +9,7 @@
 import requests
 
 API_ROOT = 'http://api.nytimes.com/svc/search/v2/articlesearch.'
+TIME_BETWEEN_REQUESTS = 10
 
 class articleAPI(object):
     def __init__(self, key = None):
@@ -198,7 +199,7 @@ def get_articles(date,query,disp):
     page_counter = 0
     quarter = 1
     while quarter < 5:
-        time.sleep(1)
+        time.sleep(TIME_BETWEEN_REQUESTS)
         daymorangebeg = ['0101','0401','0701','1001']
         daymorangeend = ['0331','0630','0930','1231']
         try:
@@ -220,10 +221,10 @@ def get_articles(date,query,disp):
                             api_counter += 1
                             api = articleAPI(api_list[api_counter])
                         else:
-                            print "Out of API queries for the day, pausing for 1 day"
+                            print "Out of API queries for the day, pausing for 1 hour"
                             api_counter = 0 
                             api = articleAPI(api_list[api_counter])
-                            pause.days(1)    
+                            time.sleep(60*60)
             else: 
                 print "Quarter " + str(quarter) + " does not have a response"
             quarter += 1
