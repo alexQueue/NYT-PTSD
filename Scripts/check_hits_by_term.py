@@ -9,7 +9,7 @@
 import requests
 
 API_ROOT = 'http://api.nytimes.com/svc/search/v2/articlesearch.'
-TIME_BETWEEN_REQUESTS = 10
+TIME_BETWEEN_REQUESTS = 6
 
 class articleAPI(object):
     def __init__(self, key = None):
