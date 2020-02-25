@@ -134,7 +134,7 @@ hits,quarter,term,year
 0,1,(vets*) AND camp disease,1933
 0,2,(vets*) AND camp disease,1933
 0,3,(vets*) AND camp disease,1933
-1,4,(vets*) AND camp disease,1933
+0,4,(vets*) AND camp disease,1933
 0,1,(vets*) AND camp disease,1934
 0,2,(vets*) AND camp disease,1934
 0,3,(vets*) AND camp disease,1934
@@ -154,7 +154,7 @@ hits,quarter,term,year
 0,1,(vets*) AND camp disease,1938
 0,2,(vets*) AND camp disease,1938
 0,3,(vets*) AND camp disease,1938
-1,4,(vets*) AND camp disease,1938
+0,4,(vets*) AND camp disease,1938
 0,1,(vets*) AND camp disease,1939
 0,2,(vets*) AND camp disease,1939
 0,3,(vets*) AND camp disease,1939
@@ -284,6 +284,7 @@ hits,quarter,term,year
 0,3,(vets*) AND camp disease,1970
 0,4,(vets*) AND camp disease,1970
 0,1,(vets*) AND camp disease,1971
+0,2,(vets*) AND camp disease,1971
 0,3,(vets*) AND camp disease,1971
 0,4,(vets*) AND camp disease,1971
 0,1,(vets*) AND camp disease,1972
@@ -456,7 +457,7 @@ hits,quarter,term,year
 0,4,(vets*) AND camp disease,2013
 0,1,(vets*) AND camp disease,2014
 0,2,(vets*) AND camp disease,2014
-0,3,(vets*) AND camp disease,2014
+1,3,(vets*) AND camp disease,2014
 0,4,(vets*) AND camp disease,2014
 0,1,(vets*) AND camp disease,2015
 0,2,(vets*) AND camp disease,2015
@@ -464,5 +465,5 @@ hits,quarter,term,year
 0,4,(vets*) AND camp disease,2015
 0,1,(vets*) AND camp disease,2016
 0,2,(vets*) AND camp disease,2016
-0,3,(vets*) AND camp disease,2016
+1,3,(vets*) AND camp disease,2016
 0,4,(vets*) AND camp disease,2016

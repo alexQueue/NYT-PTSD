@@ -69,7 +69,7 @@ hits,quarter,term,year
 0,4,(vets*) AND barbed-wire disease,1916
 0,1,(vets*) AND barbed-wire disease,1917
 0,2,(vets*) AND barbed-wire disease,1917
-1,3,(vets*) AND barbed-wire disease,1917
+0,3,(vets*) AND barbed-wire disease,1917
 0,4,(vets*) AND barbed-wire disease,1917
 0,1,(vets*) AND barbed-wire disease,1918
 0,2,(vets*) AND barbed-wire disease,1918
@@ -269,7 +269,6 @@ hits,quarter,term,year
 0,4,(vets*) AND barbed-wire disease,1966
 0,1,(vets*) AND barbed-wire disease,1967
 0,2,(vets*) AND barbed-wire disease,1967
-0,3,(vets*) AND barbed-wire disease,1967
 0,4,(vets*) AND barbed-wire disease,1967
 0,1,(vets*) AND barbed-wire disease,1968
 0,2,(vets*) AND barbed-wire disease,1968

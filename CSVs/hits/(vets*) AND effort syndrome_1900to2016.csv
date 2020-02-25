@@ -101,7 +101,7 @@ hits,quarter,term,year
 0,4,(vets*) AND effort syndrome,1924
 0,1,(vets*) AND effort syndrome,1925
 0,2,(vets*) AND effort syndrome,1925
-1,3,(vets*) AND effort syndrome,1925
+0,3,(vets*) AND effort syndrome,1925
 0,4,(vets*) AND effort syndrome,1925
 0,1,(vets*) AND effort syndrome,1926
 0,2,(vets*) AND effort syndrome,1926
@@ -232,7 +232,7 @@ hits,quarter,term,year
 0,3,(vets*) AND effort syndrome,1957
 0,4,(vets*) AND effort syndrome,1957
 0,1,(vets*) AND effort syndrome,1958
-1,2,(vets*) AND effort syndrome,1958
+0,2,(vets*) AND effort syndrome,1958
 0,3,(vets*) AND effort syndrome,1958
 0,4,(vets*) AND effort syndrome,1958
 0,1,(vets*) AND effort syndrome,1959
