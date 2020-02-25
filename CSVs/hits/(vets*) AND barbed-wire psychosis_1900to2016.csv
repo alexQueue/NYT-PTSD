@@ -75,6 +75,7 @@ hits,quarter,term,year
 0,2,(vets*) AND barbed-wire psychosis,1918
 0,3,(vets*) AND barbed-wire psychosis,1918
 0,4,(vets*) AND barbed-wire psychosis,1918
+0,1,(vets*) AND barbed-wire psychosis,1919
 0,2,(vets*) AND barbed-wire psychosis,1919
 0,3,(vets*) AND barbed-wire psychosis,1919
 0,4,(vets*) AND barbed-wire psychosis,1919
@@ -273,6 +274,7 @@ hits,quarter,term,year
 0,1,(vets*) AND barbed-wire psychosis,1968
 0,2,(vets*) AND barbed-wire psychosis,1968
 0,3,(vets*) AND barbed-wire psychosis,1968
+0,4,(vets*) AND barbed-wire psychosis,1968
 0,1,(vets*) AND barbed-wire psychosis,1969
 0,2,(vets*) AND barbed-wire psychosis,1969
 0,3,(vets*) AND barbed-wire psychosis,1969

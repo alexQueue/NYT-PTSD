@@ -59,7 +59,7 @@ hits,quarter,term,year
 0,2,(vets*) AND traumatic neurosis,1914
 0,3,(vets*) AND traumatic neurosis,1914
 0,4,(vets*) AND traumatic neurosis,1914
-1,1,(vets*) AND traumatic neurosis,1915
+0,1,(vets*) AND traumatic neurosis,1915
 0,2,(vets*) AND traumatic neurosis,1915
 0,3,(vets*) AND traumatic neurosis,1915
 0,4,(vets*) AND traumatic neurosis,1915
@@ -155,6 +155,7 @@ hits,quarter,term,year
 0,2,(vets*) AND traumatic neurosis,1938
 0,3,(vets*) AND traumatic neurosis,1938
 0,4,(vets*) AND traumatic neurosis,1938
+0,1,(vets*) AND traumatic neurosis,1939
 0,2,(vets*) AND traumatic neurosis,1939
 0,3,(vets*) AND traumatic neurosis,1939
 0,4,(vets*) AND traumatic neurosis,1939
@@ -315,7 +316,7 @@ hits,quarter,term,year
 0,3,(vets*) AND traumatic neurosis,1978
 0,4,(vets*) AND traumatic neurosis,1978
 0,1,(vets*) AND traumatic neurosis,1979
-0,2,(vets*) AND traumatic neurosis,1979
+1,2,(vets*) AND traumatic neurosis,1979
 0,3,(vets*) AND traumatic neurosis,1979
 0,4,(vets*) AND traumatic neurosis,1979
 0,1,(vets*) AND traumatic neurosis,1980
@@ -444,6 +445,7 @@ hits,quarter,term,year
 0,4,(vets*) AND traumatic neurosis,2010
 0,1,(vets*) AND traumatic neurosis,2011
 0,2,(vets*) AND traumatic neurosis,2011
+0,3,(vets*) AND traumatic neurosis,2011
 0,4,(vets*) AND traumatic neurosis,2011
 0,1,(vets*) AND traumatic neurosis,2012
 0,2,(vets*) AND traumatic neurosis,2012
