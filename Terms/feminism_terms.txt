@@ -1,14 +1,14 @@
 "feminist"
 "feminism"
-"women’s movement"
-"women’s suffrage"
+"women's movement"
+"women's suffrage"
 "gender equality"
 "equalism"
 "equalist"
 "gender justice"
-women’s lib*
+women's lib*
 "movement towards gender equality"
-"women’s empowerment"
+"women's empowerment"
 "intersectional feminism"
 "intersectional feminist"
 "womanism"
