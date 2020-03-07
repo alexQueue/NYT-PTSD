@@ -9,7 +9,7 @@
 import requests
 
 API_ROOT = 'http://api.nytimes.com/svc/search/v2/articlesearch.'
-TIME_BETWEEN_REQUESTS = 6
+TIME_BETWEEN_REQUESTS = 2
 
 class articleAPI(object):
     def __init__(self, key = None):
@@ -161,7 +161,7 @@ write_out_path = abspath('CSVs/hits/')
 
 #Start and end years
 start_year = 1900
-end_year = 2016
+end_year = 2019
 
 #Parses the JSON response and returns the year, # of hits from the metadata, the term, and what quarter it was in.
 def parse_articles(articles, year, term, quarter):
