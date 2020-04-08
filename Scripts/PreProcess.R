@@ -7,14 +7,17 @@ invisible(lapply(libs, require, character.only = TRUE))
 
 # # Figure out the user and choose the data path accordingly
 user = system("whoami",intern=TRUE)
-if(user == "adamchekroud"){
-  dat_path <- "/Users/adamchekroud/Documents/Phd/Projects/NYT/NYT_Mental_Health_Trends"
-  save_path <- ""
-  hits_path <- ""
-} else {
-  save_path <- "/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/Processed_Data"
-  hits_path <- "/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/CSVs/hits"
-}
+# if(user == "adamchekroud"){
+#   dat_path <- "/Users/adamchekroud/Documents/Phd/Projects/NYT/NYT_Mental_Health_Trends"
+#   save_path <- ""
+#   hits_path <- ""
+# } else {
+#   save_path <- "/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/Processed_Data"
+#   hits_path <- "/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/CSVs/hits"
+# }
+
+save_path = paste(getwd(), '/Processed_Data', sep = "")
+hits_path = paste(getwd(), '/CSVs/hits', sep = "")
 
 setwd(hits_path)
 wd <- getwd()
@@ -48,6 +51,14 @@ all <- all %>%
 
 all$term <- as.factor(all$term)
 #Recode some terms to be more consistent with a general pattern
+# Necessary?
+# all$term <- all$term %>%
+#   plyr::revalue(c(
+#     "veteran.soldier.military.armedforces AND PTSD" = "(veteran or soldier or military or armedforces) AND PTSD",
+#     "veteran.soldier.military.armedforces AND shell shock" = "(veteran or soldier or military or armedforces) AND shell shock",
+#     "veteran.soldier.military.armedforces AND battle fatigue" = "(veteran or soldier or military or armedforces) AND battle fatigue")) %>%
+#   sub("(veteran or soldier or military or armedforces)", "vets*", .)
+
 all$term <- all$term %>%
   plyr::revalue(c(
     "veteran.soldier.military.armedforces AND PTSD" = "(veteran or soldier or military or armedforces) AND PTSD",
@@ -58,10 +69,11 @@ all$term <- all$term %>%
 #Calculate the yearly percentage of hits/baserate: percentage of hits for that term in relation to the total number of articles published that year
 all.yearly <- all %>%
   group_by(term,year) %>%
-  summarise(yearly_percentage = sum(hits)/sum(baserate) *100) %>%
+  summarise(yearly_percentage = sum(hits)/sum(baserate) *100.0) %>%
   ungroup()
 
 #Save the big dataframe as an RDS
 setwd(save_path) 
 saveRDS(all, file = "all_terms_hits.RDS" )
 saveRDS(all.yearly, file = "all_terms_hits.yearly.RDS")
+

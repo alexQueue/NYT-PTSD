@@ -4,7 +4,7 @@
 libs <- c("tidyverse", "RColorBrewer","stringr", "foreach", "forcats", "dplyr")
 invisible(lapply(libs, require, character.only = TRUE))
 
-setwd("/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD")
+# setwd("/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD")
 
 #Load data
 all.yearly <- readRDS(file = "Processed_Data/all_terms_hits.yearly.RDS")
