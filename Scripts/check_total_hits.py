@@ -3,7 +3,7 @@
 This script pulls the total number of articles in the NYT per quarter per year, just as a reference point.
 It is very similar to the benchmarker.py script, just without the rotating keys and without any search terms. 
 '''
-from nytimesarticle import articleAPI
+from check_hits_by_term import articleAPI
 import csv
 import time
 import os
@@ -14,7 +14,7 @@ api = articleAPI(api_list[6])
 mental_health = []
 #Start and end year 
 begin = 1900
-end = 2016
+end = 2019
 #Returns the hits response of the metadata
 def parse_articles(articles, year, quarter):
     shell = []
