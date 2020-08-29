@@ -1,19 +1,19 @@
-(femin*) AND feminist
-(femin*) AND feminism
-(women*) AND women's movement
-(women*) AND women's suffrage
-(gender*) AND gender equality
-(equali*) AND equalism
-(equali*) AND equalist
-(gender*) AND gender justice
-(women*) AND women's lib*
-(gender*) AND movement towards gender equality
-(women*) AND women's empowerment
-(femin*) AND intersectional feminism
-(femin*) AND intersectional feminist
-(woman*) AND womanism
-(woman*) AND womanist
-(femin*) AND black feminism
-(femin*) AND black feminist movement
-(femin*) AND feminism NOT black
-(femin*) AND feminist movement NOT black
+body.search:feminist
+body.search:feminism
+body.search:women's movement
+body.search:women's suffrage
+body.search:gender equality
+body.search:equalism
+body.search:equalist
+body.search:gender justice
+body.search:women's lib*
+body.search:movement towards gender equality
+body.search:women's empowerment
+body.search:intersectional feminism
+body.search:intersectional feminist
+body.search:womanis
+body.search:womanist
+body.search:black feminism
+body.search:black feminist movement
+body.search:feminism NOT black
+body.search:feminist movement NOT black
