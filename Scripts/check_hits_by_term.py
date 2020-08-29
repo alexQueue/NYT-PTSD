@@ -204,7 +204,7 @@ def get_articles(date,query,disp):
         daymorangebeg = ['0101','0401','0701','1001']
         daymorangeend = ['0331','0630','0930','1231']
         try:
-            articles = api.search(q = query,
+            articles = api.search(fq = query,
                 begin_date = date + daymorangebeg[quarter - 1],
                 end_date = date + daymorangeend[quarter - 1],
                 sort='oldest',

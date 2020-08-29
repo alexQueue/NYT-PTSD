@@ -1,21 +1,19 @@
-body.search=feminist
-body.search=feminism
-body.search=feminist
-body.search=feminism
-body.search=women's movement
-body.search=women's suffrage
-body.search=gender equality
-body.search=equalism
-body.search=equalist
-body.search=gender justice
-body.search=women's lib*
-body.search=movement towards gender equality
-body.search=women's empowerment
-body.search=intersectional feminism
-body.search=intersectional feminist
-body.search=womanism
-body.search=womanist
-body.search=black feminism
-body.search=black feminist movement
-body.search=feminism NOT black
-body.search=feminist movement NOT black
+body.search:"feminist"
+body.search:"feminism"
+body.search:"women's movement"
+body.search:"women's suffrage"
+body.search:"gender equality"
+body.search:"equalism"
+body.search:"equalist"
+body.search:"gender justice"
+body.search:"women's lib*"
+body.search:"movement towards gender equality"
+body.search:"women's empowerment"
+body.search:"intersectional feminism"
+body.search:"intersectional feminist"
+body.search:"womanism"
+body.search:"womanist"
+body.search:"black feminism"
+body.search:"black feminist movement"
+body.search:"feminism NOT black"
+body.search:"feminist movement NOT black"
