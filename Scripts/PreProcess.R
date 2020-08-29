@@ -16,6 +16,7 @@ user = system("whoami",intern=TRUE)
 #   hits_path <- "/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD/CSVs/hits"
 # }
 
+setwd("/Users/alexanderquinlan/Documents/workspace/NYT-PTSD")
 save_path = paste(getwd(), '/Processed_Data', sep = "")
 hits_path = paste(getwd(), '/CSVs/hits', sep = "")
 
@@ -65,6 +66,14 @@ all$term <- all$term %>%
     "veteran.soldier.military.armedforces AND shell shock" = "(veteran or soldier or military or armedforces) AND shell shock",
     "veteran.soldier.military.armedforces AND battle fatigue" = "(veteran or soldier or military or armedforces) AND battle fatigue")) %>%
   sub("(veteran or soldier or military or armedforces)", "vets*", .)
+
+all$term <- all$term %>%
+  plyr::revalue(c(
+    "veteran.soldier.military.armedforces AND PTSD" = "(veteran or soldier or military or armedforces) AND PTSD",
+    "veteran.soldier.military.armedforces AND shell shock" = "(veteran or soldier or military or armedforces) AND shell shock",
+    "veteran.soldier.military.armedforces AND battle fatigue" = "(veteran or soldier or military or armedforces) AND battle fatigue")) %>%
+  sub("(veteran or soldier or military or armedforces)", "vets*", .)
+
 
 #Calculate the yearly percentage of hits/baserate: percentage of hits for that term in relation to the total number of articles published that year
 all.yearly <- all %>%

@@ -4,9 +4,11 @@
 libs <- c("tidyverse", "RColorBrewer","stringr", "foreach", "forcats", "dplyr")
 invisible(lapply(libs, require, character.only = TRUE))
 
-# setwd("/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD")
+# install.packages("tidyverse") # setwd("/Users/hieronimusloho/Box Sync/Research Stuff/NYT-PTSD")
+# install.packages("ggplot2")
 
 #Load data
+setwd("/Users/alexanderquinlan/Documents/workspace/NYT-PTSD")
 all.yearly <- readRDS(file = "Processed_Data/all_terms_hits.yearly.RDS")
 mil.pop <- read_csv(file = "CSVs/other/Mil.Vs.Total.Pop.csv")
 # mil.pop <- read_csv(file = "CSVs/other/Mil.Vs.Total.Pop.csv")
@@ -66,6 +68,22 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 }
 
 
+uniplot <- function(match="Term") {
+  plot = all.yearly %>%
+    filter(term == match) %>%
+    ggplot(aes(x = year, y = yearly_percentage)) + 
+    geom_line() + 
+    theme_bw() +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+    scale_x_continuous(breaks = seq(1900,2010,10)) +
+    ylab("% of total articles per year") +
+    xlab("Year") +
+    ggtitle(paste(str_interp("Use of '${match}' in popular media")),
+            subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
+  print(plot)
+}
+
+
 ###Visualizations of the comparions of vets/PTSD/MH NYT mentions with percentage of US population in military.
 #Plot military population as a percentage of total US population by year
 mil.pop.yearly.plot <- mil.pop %>%
@@ -95,7 +113,7 @@ ptsd_all_forms.yearly.plot <- all.yearly %>%
 
 #Plot all forms of PTSD hits as a percentage of all total articles by year         
 feminism.yearly.plot <- all.yearly %>%
-  filter(term == "feminism") %>%
+  filter(str_detect(term,"femini")) %>%
   ggplot(aes(x = year, y = yearly_percentage)) + 
   geom_line() + 
   theme_bw() +
@@ -108,7 +126,7 @@ feminism.yearly.plot <- all.yearly %>%
 
 #Plot all forms of PTSD hits as a percentage of all total articles by year         
 feminist.yearly.plot <- all.yearly %>%
-  filter(term == "feminist") %>%
+  filter(term == "(femin*) AND black feminism") %>%
   ggplot(aes(x = year, y = yearly_percentage)) + 
   geom_line() + 
   theme_bw() +
@@ -116,12 +134,12 @@ feminist.yearly.plot <- all.yearly %>%
   scale_x_continuous(breaks = seq(1900,2010,10)) +
   ylab("% of total articles per year") +
   xlab("Year") +
-  ggtitle(paste("Use of 'feminist' in popular media"),
+  ggtitle(paste("Use of 'black feminism' in popular media"),
           subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")
 
 #Plot all forms of PTSD hits as a percentage of all total articles by year         
 feminis.yearly.plot <- all.yearly %>%
-  filter(term == "feminis") %>%
+  filter(str_detect(term,"(femin*) AND black feminism")) %>%
   ggplot(aes(x = year, y = yearly_percentage)) + 
   geom_line() + 
   theme_bw() +
@@ -133,24 +151,15 @@ feminis.yearly.plot <- all.yearly %>%
           subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")
 
 multiplot(feminism.yearly.plot, feminist.yearly.plot, feminis.yearly.plot)
-
+uniplot("feminism")
+uniplot("feminist")
 
 #Plot all forms of PTSD hits as a percentage of all total articles by year         
-equalism.yearly.plot <- all.yearly %>%
-  filter(term == "equalism") %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'equalism' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-
+uniplot("(women*) AND equalism")
+uniplot("(women*) AND equalist")
 #Plot all forms of PTSD hits as a percentage of all total articles by year         
 equalist.yearly.plot <- all.yearly %>%
-  filter(term == "equalist") %>%
+  filter(str_detect(term,"equalist")) %>%
   ggplot(aes(x = year, y = yearly_percentage)) + 
   geom_line() + 
   theme_bw() +
@@ -167,104 +176,20 @@ multiplot(equalism.yearly.plot, equalist.yearly.plot)
 
 
 #Plot all forms of PTSD hits as a percentage of all total articles by year         
-gender.yearly.plot <- all.yearly %>%
-  filter(term == "gender") %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'gender' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
 
-#Plot all forms of PTSD hits as a percentage of all total articles by year         
-womans.yearly.plot <- all.yearly %>%
-  filter(term == "woman's") %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'womans' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(womans.yearly.plot)
+uniplot('gender')
+uniplot("(gender*) AND gender equality")
 
-#Plot all forms of PTSD hits as a percentage of all total articles by year         
-womansempowerment.yearly.plot <- all.yearly %>%
-  filter(term == '"women\'s empowerment"') %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'womens empowerment' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(womansempowerment.yearly.plot)
-
-#Plot all forms of PTSD hits as a percentage of all total articles by year         
-womanist.yearly.plot <- all.yearly %>%
-  filter(term == "womanist") %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'womanist' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(womanist.yearly.plot)
-
-#Plot all forms of PTSD hits as a percentage of all total articles by year         
-womenslib.yearly.plot <- all.yearly %>%
-  filter(term == "womens's lib*") %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'womens's lib*' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(womenslib.yearly.plot)
-
-#Plot all forms of PTSD hits as a percentage of all total articles by year         
-womanism.yearly.plot <- all.yearly %>%
-  filter(term == "womanism") %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'womanism' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(womanism.yearly.plot)
+uniplot("women's")
+uniplot("(women*) AND women's empowerment")
+uniplot("womanist")
+uniplot("(women*) AND women's lib*")
+uniplot("women's lib*")
 
 
-
-#Plot all forms of PTSD hits as a percentage of all total articles by year         
-black.yearly.plot <- all.yearly %>%
-  filter(str_detect(term,"black")) %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'black' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(black.yearly.plot)
-
+uniplot("black feminist movement")
+uniplot("(femin*) AND black feminism")
+uniplot("(femin*) AND feminism NOT black")
 #Combine the two plots together and save
 
 multiplot(feminism.yearly.plot, equalism.yearly.plot, gender.yearly.plot)
@@ -277,15 +202,7 @@ dev.off()
 #   filter(str_detect(term,"suffrag")) %>%
 # Company %like% "foo"
 # library(data.table)
-test.yearly.plot <- all.yearly %>%
-  filter(str_detect(term,"suffrag")) %>%
-  ggplot(aes(x = year, y = yearly_percentage)) + 
-  geom_line() + 
-  theme_bw() +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks = seq(1900,2010,10)) +
-  ylab("% of total articles per year") +
-  xlab("Year") +
-  ggtitle(paste("Use of 'TEST' in popular media"),
-          subtitle = "NYT, Reuters, and AP sources, 1900-2016 \n'")  
-print(test.yearly.plot)
+
+uniplot("(women*) AND  women's suffrage")
+
+
